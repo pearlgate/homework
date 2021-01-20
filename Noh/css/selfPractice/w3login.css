@@ -1,0 +1,292 @@
+*{
+    margin: 0 auto;
+    padding: 0 auto;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+header{
+    height: 15.5vh;
+    min-width: 800px;
+}
+nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;    
+}
+
+/* page intro */
+.pagename{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.pagename #w3school{
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 10px 10px 10px 20px;
+    font-size: 34px;    
+}
+.pagename #pageintro{
+    margin-right: 1%;
+    padding-top: 23px;
+    font-size: 20px;
+}
+/* page login */
+.login{
+    margin: 0 40px 0 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginlink{
+    margin-top: 7px;
+    padding-top: 6px;
+    width: 90%;
+    height: 60%;
+    display: block;
+    color: white;
+    background-color: #2ecc71;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+} 
+.pagename span{
+    color: #1abc9c;
+}
+
+/* menu */
+.menuitems{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    background: #1abc9c;
+}
+.left-menu{
+    margin-left: 2%;
+    width: 100%;
+    height: 100%;
+    font-size: 17px;
+    font-weight: 600;
+    flex: 5;
+}
+
+.left-menu ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.left-menu ul li a{
+    padding: 15px;
+    background: #1abc9c;
+    color: white;
+    text-transform: uppercase;
+    display: block;
+    text-decoration: none;
+    text-align: left;
+}
+
+.left-menu ul li a:hover{
+    background: white;
+    color: black;
+}
+
+.left-menu ul > li{
+    margin: 0;
+    padding: 0;
+    width: 20%;
+}
+
+/*left-menu drop down */
+.left-menu ul li > ul{
+    display: none;
+    flex-direction: column;
+}
+
+.left-menu ul li:hover > ul{
+    display: flex;
+}
+
+.left-menu ul li > ul li{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+/* right-menu */
+.right-menu{
+    flex: 1;
+    height: 100%;
+}
+.right-menu ul{
+    padding-left: 20px ;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right-menu ul li{
+    width: 100%;
+    height: 100%;
+}
+.right-menu ul li:nth-child(1){
+    margin: 0 3% 0 40px;
+}
+.right-menu ul li:not(:first-child){
+    margin: 0 3% 0 3%;
+}
+.right-menu ul li > a{
+    display: block;
+    height: 100%;
+    padding-top: 15px;
+    color: white;
+}
+
+.right-menu ul li > a i{
+    font-size: 18px;
+}
+
+
+
+/* login form */
+.login-form{
+    margin: 0 auto;
+    flex-basis: auto;
+    height: 84.5vh;
+}
+.login-form form{
+    width: 100%;
+    min-width: 750px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.login-form .box{
+    padding: 10px 20px;
+    width: 43%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1abc9c;
+}
+/* img */
+.box .img{
+    width: 100%;
+    text-align: center;
+}
+.box .img i{
+    width: 100%;
+    font-size: 50px;
+    color: white;
+}
+
+/* heading */
+form .box{
+    display: flex;
+}
+.box .heading{
+    margin: 2% auto;
+}
+.box .heading h2{
+    color: white;
+    font-size: 40px;
+    border-bottom: 3px solid white;
+}
+
+/* input style */
+.box .form-fields{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.box .input-box{
+    margin: 4px auto;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.box .input-box .icon{
+    width: 10px;
+    margin-right: 8px;
+}
+
+.box .input-box .icon >  i{   
+    font-size: 20px;
+    color: white;
+}
+.box .input-box > .form-control{
+    margin-left: 10px;
+    height: 36px;
+    width: 80%;
+}
+
+.box .form-control{
+    width: 90%;
+} 
+/* button-box*/
+.button-box{
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-box button{
+    color: #1abc9c;
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 25%;
+    margin-right: 4% ;
+    padding: 10px 30px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    flex: 1;
+}
+.button-box button:hover{
+    box-shadow: 0px 0px 10px #cccccc;
+}
+.button-box a{
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    flex: 6;
+}
+.button-box a:hover{
+    color: royalblue;
+}
+/* sign-up */
+.sign-up{
+    margin-top: 15px;
+    display: flex;
+}
+.sign-up p{
+    color: white;
+    font-size: 24px;
+}
+.sign-up a{
+    margin-left:10px;
+    font-size: 24px;
+    color: white;
+}
+.sign-up a:hover{
+    color:red
+}

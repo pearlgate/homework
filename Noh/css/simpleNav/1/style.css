@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #888888;
+}
+nav{
+    background-color: cyan;
+    color: #eee;
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 15px;
+    text-align: right;
+}
+nav li{
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 12px;
+    cursor: pointer;
+}
+nav li:hover{
+    background-color: #97cccc;
+}
+.dropdown{
+    position: relative;
+}
+.dropdown-content{
+     position : absolute;
+     top: 100%;
+     left: 0;
+     text-align: left;
+     display: none;
+}
+.dropdown-content li{
+    background-color: cyan;
+    width: 100%;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
+}
