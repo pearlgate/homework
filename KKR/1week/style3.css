@@ -1,0 +1,44 @@
+.container {
+    height: 300px;
+    
+    background-color: royalblue;
+    
+    display : flex;
+    
+    flex-direction: row;
+    
+    
+    /* 
+    align-items:stretch;
+    
+    
+    flex-wrap: wrap;
+
+
+    justify-content:space-between;
+
+    align-content:space-around; 
+    
+    */
+}
+
+.item {
+    /* 
+    height: 100px; */
+    /* text-align: center; */
+    width: 10rem;
+    border: 1px solid black;
+    font-size: 3rem;
+    background-color: yellowgreen;
+    flex-shrink: 1;
+}
+
+.item:nth-child(3) {
+    flex-shrink: 3;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=East+Sea+Dokdo&display=swap');
+
+body {
+    font-family:'East Sea Dokdo', cursive;
+}

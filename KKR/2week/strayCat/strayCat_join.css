@@ -1,0 +1,44 @@
+.join_form {
+    z-index: 2;
+    position: relative;
+    width: 30%;
+    top: 8%;
+    left: 36.5%;
+
+}
+
+.join_form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.join_form label {
+    margin-bottom: 0.3rem;
+    font-weight:normal;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.945);
+
+}
+
+.join_form input {
+    margin-bottom: 1rem;
+    height: 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    
+}
+
+.join_form input:hover {
+    border: 0.1rem solid skyblue;
+}
+
+
+.join_form form .button {
+    height: 2.5rem;
+    margin-top: 2rem;
+    background: #88BAF3 ;
+    color: #fff;
+    font-size: 1rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}

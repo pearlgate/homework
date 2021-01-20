@@ -1,0 +1,11 @@
+table, th, tr, td{
+    border: 0.1rem solid #000 ;
+}
+
+td {
+    height: 2rem;
+}
+
+tr:nth-child(2) {
+    width: 5rem;
+}

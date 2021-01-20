@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url(images/somehow.jpg);
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+
+.header-text {
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 15% 0;
+}
+
+.header-text h2 {
+    text-transform: uppercase;
+    font-size: 65px;
+    letter-spacing: 2px;
+}
+
+.header-text p {
+    font-size: 25px;
+}
+
+.wrapper {
+    display: flex;
+    height: 100%;
+}
+
+
+
+.main-left {
+    background: transparent;
+    width: 20%;
+    position: relative;
+}
+
+.main-right {
+    width: 80%;
+
+}
+
+.section-header {
+    text-align: center;
+    font-size: 25px;
+}
+
+.line {
+    background: #000;
+    height: 2px;
+    width: 100px;
+    display: inline-block;
+    margin-bottom: 60px;
+}
+
+.left-sticky {
+    color: #fff;
+    font-size: 22px;
+    align-items: stretch;
+    justify-content: stretch;
+    top: 20px;
+    width: 200px;
+    /* position: sticky; */
+    display: flex;
+}
+
+.right-one, .right-two, .right-three {
+    padding: 80px 0;
+    clear: both;
+    height: 300px;
+}
+
+.left-sticky ul {
+    list-style-type: none;
+    background: rgb(163, 227, 252, 0.7);
+    padding: 25px;
+}
+
+.left-sticky ul li {
+    margin: 5px 0;
+    border-bottom: 1px solid#fff;
+}
+
+.left-sticky ul li a {
+    text-decoration: none;
+    display: block;
+    width: 150px;
+    color: rgb(101, 67, 250);
+}
+
+.left-sticky ul li a:hover {
+    background-color: rgb(96, 205, 248, 0.8);
+    border-radius: 4px;
+    box-shadow: 0px 0px 2px rgba(138, 222, 255, 0.8), 0px 0px 6px rgb(96, 205, 248, 0.8), 0px 0px 11px rgb(96, 205, 248, 0.6), 0px 0px 20px rgb(96, 205, 248, 0.4);
+}
+
+.topic-one, .topic-two, .topic-three {
+    width: 30%;
+    /* float: left; */
+    margin: 0 15px;
+}
+
+footer {
+    padding: 20px 0;
+    background: #000;
+    text-align: center;
+    color: #fff;
+
+}

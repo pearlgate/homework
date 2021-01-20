@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-size: 2rem;
+}
+
+h1, p {
+    margin: 0;
+}
+
+#asdf {
+    background-color: red;
+
+}
+
+.container {
+    background-color: wheat;
+}
+
+.item {
+    padding: 5%;
+}
+
+.item-a {
+    background-color: tomato;
+}
+
+.item-b {
+    background-color: teal;
+}
+
+@media screen and (min-width:700px) {
+    .container {
+        font-size: 0;
+    }
+    
+    .item {
+        vertical-align: top;
+        /* display: inline-block; */
+        font-size: 2rem;
+
+    }
+
+    .item-a {
+        width: 30%;
+    }
+
+    .item-b {
+        width: 50%;
+    }
+}

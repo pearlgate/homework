@@ -1,0 +1,36 @@
+.navbar {
+    background-color: yellowgreen;
+    width: 50rem;
+    margin: 0 auto;
+}
+
+.navbar_con {
+    
+    background-color: tomato;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+
+}
+
+.navbar_item {
+    color: brown;
+    /* border: black solid 0.1rem; */
+    text-align: center;
+    cursor: pointer;
+    line-height: 6rem;
+    vertical-align: middle;
+
+}
+
+.navbar_item:hover {
+    background-color: brown;
+}
+
+.navbar_item a {
+    width: 6rem;
+    height: 6rem;
+    color: white;
+    display: block;
+    text-decoration: none;
+}
