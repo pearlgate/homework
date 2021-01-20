@@ -1,0 +1,106 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Roboto, sans-serif;
+    font-size: 10px;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #eee;
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    max-width: 120rem;
+    margin: auto;
+    padding: 0 1.5rem;
+}
+
+.image_gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 1.5rem;
+    grid-template-areas: ;
+}
+
+.image_gallery a {
+    width: 100%;
+    height: 25rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.image_gallery a i {
+    color: rgba(255,255,255, .6);
+    font-size: 3rem;
+    position: relative;
+    z-index: 100;
+    padding: 1rem 3rem;
+    border: 2px solid rgba(255, 255, 255, .6);
+    border-radius: .4rem;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.image_gallery a::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.8);
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.image_gallery a:hover i,
+.image_gallery a:hover::before{
+    opacity: 1;
+}
+
+.img_1{
+    grid-area: img_1;
+    background-image: url(1.jpeg);
+}
+.img_2{
+    grid-area: img_2;
+    background-image: url(2.jpeg);
+}
+.img_3{
+    grid-area: img_3;
+    background-image: url(3.jpeg);
+}
+.img_4{
+    grid-area: img_4;
+    background-image: url(4.jpeg);
+}
+.img_5{
+    grid-area: img_5;
+    background-image: url(5.jpeg);
+}
+.img_6{
+    grid-area: img_6;
+    background-image: url(6.jpeg);
+}
+.img_7{
+    grid-area: img_7;
+    background-image: url(apple.jpeg);
+}
+.img_8{
+    grid-area: img_8;
+    background-image: url(idh.jpeg);
+}
