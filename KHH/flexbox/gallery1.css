@@ -1,0 +1,41 @@
+body {
+    background: #262626;
+}
+h1 {
+    text-align: center;
+    text-shadow: 0 2px 20px #fff;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 2% 0 0;
+}
+.wrapper {
+    width: 1170px;
+    display: flex;
+    height: 70vh;
+    margin: 3% auto 0;
+}
+.single_img {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 500ms cubic-bezier(.14,.69,.95,.1);
+}
+.single_img:hover {
+    flex-basis: 65vw;
+    background-size: cover;
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+    .wrapper {
+        width: 100%;
+
+    }
+}
+@media (max-width: 767px) {
+    .wrapper {
+        width: 100%;
+    }
+}

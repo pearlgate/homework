@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="stylesheet_Login.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <div class="menu_div">
+                <ul class="menu_div_ul">
+                    <li class="menu_div_Mark"><a href="#"><i class="fas fa-paw"></i></a></li>
+                    <li class="menu_div_Home"><a href="index.html">Home</a></li>
+                    <li class="menu_div_Services"><a href="#">Serivces</a>
+                        <!-- <div class="aa"> -->
+                            <ul class="Services_ul">
+                                <li><a href="#">Find</a></li>
+                                <li><a href="#">Buy</a></li>
+                                <li><a href="#">Food</a></li>
+                                <li><a href="#">All</a></li>
+                            </ul>
+                        <!-- </div> -->
+                    </li>
+                    <li class="menu_div_Products"><a href="#">Products</a>
+                        <ul class="Products_ul">
+                            <li><a href="#">For dog</a></li>
+                            <li><a href="#">For pig</a></li>
+                            <li><a href="#">For bird</a></li>
+                            <li><a href="#">All</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu_div_Voc"><a href="#">VOC</a></li>
+                    <li class="menu_div_About"><a href="#">About</a></li>
+                    <li class="menu_div_fas"><a href="#"><i class="fas fa-search"></i></a></li>
+                </ul>
+                <ul class="Login_ul">
+                    <li><a href="Login.html">Login</a></li>
+                    <li><a href="Join.html">Join</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="h2_div">
+        <h2>로그인페이지입니다</h2>
+    </div>
+    <div class="Login_div">
+        <form method="post" id="authForm" action="Login_check.php">
+            <div class="Login_box">
+                <label for="login_id"> ID </label>
+                <input type="text" id="login_id" name="login_id" placeholder="Enter your ID">
+                <label for="login_pw"> Password </label>
+                <input type="password" id="login_pw" name="password" placeholder="Enter your Password">
+            </div>
+            <button type="submit">로그인</button>
+            <div class="check_box">
+                <input type="checkbox" id="keepLogin" name="keepLogin">
+                <label for="keepLogin"><span>로그인 상태유지</span></label>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
