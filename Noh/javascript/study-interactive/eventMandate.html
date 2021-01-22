@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandate</title>
+    <style>
+      body{
+          height:100vh;
+          display:flex;
+          justify-content:center;
+          align-items: center;
+          box-sizing:border-box;
+      }
+      .menu{
+          display: flex;
+          align-items: center;
+          padding: 1em;
+          border-radius: 20px;
+          background:#16a085;
+      }
+      .menu-btn{
+          display: inline-flex;
+          align-items: center;
+          margin: 0 1em;
+          padding: 0.1em 1em 0.1em 0.5em;
+          border: 5px solid #f1c40f;
+          border-radius: 20px;
+          outline: 0;
+          font: 900 1.2rem NotoSans;
+          background-color:white;
+		  box-shadow: rgba(0,0,0,0.1) 0 0 0 1px inset;
+      }
+      .icon{
+          width: 60px;
+      }
+      .menu-btn span{
+          display: inline-block;
+          margin-left: 1px;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <!-- <button class="menu-btn" data-value="1">
+            <img class="icon" src="./image/green Among Us Character PNG.png" alt="">
+            <span class="btn-label">일분이 1</span>
+        </button>
+        <button class="menu-btn" data-value="2">
+            <img class="icon" src="./image/Light Blue Aqua Cyan Teal Among Us Character PNG.png" alt="">
+            <span class="btn-label">일분이 2</span>
+        </button>
+        <button class="menu-btn" data-value="3">
+            <img class="icon" src="./image/Yellow Among Us Character PNG.png" alt="">
+            <span class="btn-label">일분이 3</span>
+        </button> -->
+    </div>
+    <script>
+        const menu = document.querySelector('.menu');
+        
+        
+        function clickHandler(event){
+            let elem = event.target;
+            while( ! elem.classList.contains('menu-btn')){
+                elem = elem.parentNode;
+
+                if(elem.nodeName == 'BODY'){
+                    elem = null;
+                    return;
+                }
+            }
+
+            console.log(elem.dataset.value);
+        }
+
+        menu.addEventListener("click", clickHandler);
+        window.addEventListener("click",() =>{
+            const htmlStr=`
+            <button class="menu-btn" data-value="1">
+                <img class="icon" src="./image/green Among Us Character PNG.png" alt="">
+                <span class="btn-label">일분이 1</span>
+            </button>
+            <button class="menu-btn" data-value="2">
+                <img class="icon" src="./image/Light Blue Aqua Cyan Teal Among Us Character PNG.png" alt="">
+                <span class="btn-label">일분이 2</span>
+            </button>
+            <button class="menu-btn" data-value="3">
+                <img class="icon" src="./image/Yellow Among Us Character PNG.png" alt="">
+                <span class="btn-label">일분이 3</span>
+            </button>`;
+
+            menu.innerHTML=htmlStr;
+        });
+    </script>
+</body>
+
+</html>

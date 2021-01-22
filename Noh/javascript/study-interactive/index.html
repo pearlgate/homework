@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0 auto;
+            padding:0 auto;
+            box-sizing:border-box;
+        }
+        h1{
+            margin-top: 15px;
+            padding-left:14px;
+            background-color: royalblue;
+            color: white;
+            font-size: 6rem;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-title">js
+        <span>hello</span>
+        DOM(Document Object Model)
+    </h1>
+    <article>
+        <header class="main-header">header</header>
+        <section>
+            <header>s header</header>
+            section 1
+        </section>
+        <section>
+            <header>s header</header>
+            section 2
+        </section>
+    </article>
+
+    <script>
+        var title =document.getElementById('main-title');
+        //태그네임으로 가져오면 여러개일 가능성 있음
+        //배열은 아니지만 배열형식으로 원하는 값만 가져올 수 있다.
+        var titleSpan = title.getElementsByTagName('span');
+        console.log(title);
+        console.log(titleSpan[0]);
+        //쿼리셀렉터를 쓰면 가져올 태그를 정하기가 편해진다. _막강하다!!
+        var mainTitle = document.querySelector('#main-title span');
+        console.log(mainTitle);
+        var allMainTitle = document.querySelectorAll('#main-title');
+        
+    </script>
+</body>
+</html>
