@@ -1,0 +1,213 @@
+[
+    {
+        "sex" : "male",
+        "size" : "S size",
+        "color" : "blue",
+        "kind" : "p",
+        "imgSrc" : "./img/blue_p.png"
+    },
+    {
+        "sex" : "female",
+        "size" : "S size",
+        "color" : "blue",
+        "kind" : "s",
+        "imgSrc" : "./img/blue_s.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "S size",
+        "color" : "blue",
+        "kind" : "t",
+        "imgSrc" : "./img/blue_t.png"
+    },
+    {
+        "sex" : "female",
+        "size" : "L size",
+        "color" : "blue",
+        "kind" : "p",
+        "imgSrc" : "./img/blue_p.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "L size",
+        "color" : "blue",
+        "kind" : "s",
+        "imgSrc" : "./img/blue_s.png"
+    },
+    {
+        "sex" : "female",
+        "size" : "M size",
+        "color" : "blue",
+        "kind" : "t",
+        "imgSrc" : "./img/blue_t.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "S size",
+        "color" : "blue",
+        "kind" : "t",
+        "imgSrc" : "./img/blue_t.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "M size",
+        "color" : "blue",
+        "kind" : "t",
+        "imgSrc" : "./img/blue_t.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "S size",
+        "color" : "blue",
+        "kind" : "t",
+        "imgSrc" : "./img/blue_t.png"
+    },
+    {
+        "sex" : "female",
+        "size" : "S size",
+        "color" : "blue",
+        "kind" : "s",
+        "imgSrc" : "./img/blue_s.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "S size",
+        "color" : "blue",
+        "kind" : "p",
+        "imgSrc" : "./img/blue_p.png"
+    },
+    {
+        "sex" : "female",
+        "size" : "S size",
+        "color" : "blue",
+        "kind" : "s",
+        "imgSrc" : "./img/blue_s.png"
+    },
+    {
+        "sex" : "female",
+        "size" : "M size",
+        "color" : "pink",
+        "kind" : "p",
+        "imgSrc" : "./img/pink_p.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "L size",
+        "color" : "pink",
+        "kind" : "t",
+        "imgSrc" : "./img/pink_t.png"
+    },
+    {
+        "sex" : "female",
+        "size" : "S size",
+        "color" : "pink",
+        "kind" : "s",
+        "imgSrc" : "./img/pink_s.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "M size",
+        "color" : "pink",
+        "kind" : "t",
+        "imgSrc" : "./img/pink_t.png"
+    },
+    {
+        "sex" : "female",
+        "size" : "S size",
+        "color" : "pink",
+        "kind" : "s",
+        "imgSrc" : "./img/pink_s.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "L size",
+        "color" : "pink",
+        "kind" : "p",
+        "imgSrc" : "./img/pink_p.png"
+    },
+    {
+        "sex" : "female",
+        "size" : "S size",
+        "color" : "pink",
+        "kind" : "s",
+        "imgSrc" : "./img/pink_s.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "M size",
+        "color" : "pink",
+        "kind" : "t",
+        "imgSrc" : "./img/pink_t.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "L size",
+        "color" : "yellow",
+        "kind" : "p",
+        "imgSrc" : "./img/yellow_p.png"
+    },
+    {
+        "sex" : "female",
+        "size" : "S size",
+        "color" : "yellow",
+        "kind" : "p",
+        "imgSrc" : "./img/yellow_p.png"
+    },
+    {
+        "sex" : "female",
+        "size" : "S size",
+        "color" : "yellow",
+        "kind" : "t",
+        "imgSrc" : "./img/yellow_t.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "L size",
+        "color" : "yellow",
+        "kind" : "p",
+        "imgSrc" : "./img/yellow_p.png"
+    },
+    {
+        "sex" : "male",
+        "size" : "XL size",
+        "color" : "yellow",
+        "kind" : "p",
+        "imgSrc" : "./img/yellow_p.png"
+    },
+       {
+        "sex" : "female",
+        "size" : "S size",
+        "color" : "yellow",
+        "kind" : "s",
+        "imgSrc" : "./img/yellow_s.png"
+    }
+    ,    {
+        "sex" : "male",
+        "size" : "S size",
+        "color" : "yellow",
+        "kind" : "t",
+        "imgSrc" : "./img/yellow_t.png"
+    }
+    ,    {
+        "sex" : "female",
+        "size" : "S size",
+        "color" : "yellow",
+        "kind" : "t",
+        "imgSrc" : "./img/yellow_t.png"
+    }
+    ,    {
+        "sex" : "female",
+        "size" : "S size",
+        "color" : "yellow",
+        "kind" : "s",
+        "imgSrc" : "./img/yellow_s.png"
+    }
+    ,    {
+        "sex" : "female",
+        "size" : "S size",
+        "color" : "yellow",
+        "kind" : "s",
+        "imgSrc" : "./img/yellow_s.png"
+    }
+]
+

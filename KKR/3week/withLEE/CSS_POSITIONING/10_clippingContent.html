@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Position Fixed</title>
+       <style>
+             body {
+            background:#eee;
+            }
+            .wrapper {
+                background:#fff;
+                margin:0 auto;
+            }
+            .grid {
+                float:left;
+                width:29%;
+                padding:1%;
+                margin:1%;
+                border:1px solid gray;
+                height:100px;
+                background:#f2f2f2;
+                position:relative;
+            }
+            
+            .grid:nth-child(1){
+                top:5px;
+            }
+            
+            .grid:nth-child(2){
+                top:10px;
+            }
+            
+            .grid:nth-child(3){
+                top:15px;
+            }
+            
+            .grids::after {
+                content:"";
+                display:block;
+                clear:both;
+            }
+            
+            .content {                
+                padding:1%;
+                margin:20px auto 0; 
+                font-family:'고양덕양 B';
+                line-height:2em;
+            }
+            
+            #banner {              
+                max-height:340px;
+                overflow:hidden;
+                margin:1%;
+                position:relative;
+                z-index:0;
+               
+                
+            }
+            
+            #banner h2 {
+                position:absolute;
+                top:300px;                
+                margin:0;
+                width:100%;
+                text-align:center;
+                color:red;
+                 z-index:2;
+            }
+          
+           
+           ul {
+               list-style:none;
+               border:1px solid gray;
+              
+              
+               margin:0;
+              
+               
+           }
+           
+           nav {
+               position:fixed;
+               top:0;
+               left:0;
+               width:100%;
+               background:#000;
+               z-index:1;
+           }          
+           
+           nav ul::after {
+               content:"";
+               display:block;
+               clear:both;
+           }
+           
+           li {
+               width:20%;
+               margin:1% 1.5%;               
+               padding:1%;
+               height:20px;
+               float:right; 
+               font-size:20px;
+               line-height:20px;
+               color:#fff;
+               font-family:'고양덕양 B';
+           }
+           
+           .grids {
+               max-height:120px;
+               overflow:hidden;
+           }
+        </style>
+    </head>
+    <body>
+         <div class="wrapper">
+             <nav>
+                <ul>
+                    <li>Relative</li>
+                    <li>Absolute</li>
+                    <li>Fixed</li>
+                    <li>Position</li>
+                
+                </ul>
+            </nav>
+            <div id="banner">
+                <img src="image/boxModel.png" style="width:100%;">
+                <h2>The Net Ninja</h2>
+            </div>
+            <div class="grids">
+                <div class="grid">grid1</div>
+                <div class="grid">grid2</div>
+                <div class="grid">grid3</div>
+            </div>
+            <div class="content">
+                <h2>Content</h2>
+                <p>위에서 세개의 그리드들이 있는데 일정선에서 동일하게 끊어져 보이도록 하고 싶으면 어떻게 해야할까?</p>
+                <p>먼저, 이 그리드들을 감싸고 있는 디브를 찾아본다. grids div인데, 그것의 크기를 알수가 있다. css에서 max-height를 설정한 후에 overflow:hidden으로 처리하면 떨어지는 선이 하나로 깔끔하다.</p>
+                <p>overflow의 값은 auto, hidden, scroll, visible, inherit등이 있다. </p>
+                
+            </div>
+         
+            
+        </div>        
+    </body>
+</html>

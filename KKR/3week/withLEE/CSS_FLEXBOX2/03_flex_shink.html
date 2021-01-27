@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                font-family:verdana;
+                margin:0;
+            }
+            body{
+                background:#eee;
+            }
+            .wrapper,.wrapper2{
+                width:100%;
+                max-width:960px;
+                margin:20px auto;
+                border:1px solid gray;
+                background-color:#fff;
+            }
+            .wrapper2{
+                padding:10px;
+                box-sizing:border-box;
+            }
+            .flex-container {
+                display:flex;
+            }
+/*
+            .flex-container:after{
+                content:"";
+                display:block;
+                clear:both;
+            }
+*/
+            .box{
+                height:100px;
+                width:320px;
+                
+            }
+            .one{
+                background:red;
+                flex-shrink:1;
+                
+            }
+            .two{
+                background:blue;
+                flex-shrink:2;
+                
+            }
+            .three{
+                background:green;
+                flex-shrink:3;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+          <div class="flex-container">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">
+            <p>flex-grow 속성이 어떤 비율로 늘어나는가라고 한다면,flex-shrink 속성은 어떤 비율로 줄어드는가 라고 할수있다.  </p>            
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">            
+            <p>이번에는 각 박스의 min-width를 지우고, width:320px로 하여 균등한 넓이를 가지고 wrapper를 꽉 채우도록 하겠다.   </p>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">            
+            <p>그 상태에서 화면을 줄여가면 균등한 비율로 줄어드는 것을 알수있다.  </p>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">            
+            <p>이제 .one{flex-shrink:1;}, .two{flex-shrink:2;}, .three{flex-shrink:3;}로 놓고 화면을 줄여보면, 1:2:3의 비율로 줄어드는 것을 볼 수 있다.  </p>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">            
+            <p>숫자가 클수록 많이 줄어드는 것이다.여기서1:2:3이라는 비율이 중요한 것이고, 숫자가 중요한 것은 아니다. 예를 들어, 5:5:6 이라고 한다면, 1:1:1.2의 비율로 줄어든다는 의미이다.  </p>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">            
+            <p>사실 flex-shrink 속성은 그렇게 많이 쓰이지는 않지만, 필요할 때 쓸수있도록 알아두자. </p>
+          </div>
+        </div>
+        
+        
+        
+    </body>
+</html>

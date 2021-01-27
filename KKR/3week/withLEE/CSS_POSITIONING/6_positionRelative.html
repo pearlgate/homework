@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Position Relative</title>
+        <style>
+            .content {
+                position:relative;
+                left:100px;
+                
+                
+            }
+            
+            .grid {
+                width:29%;
+                border:1px solid gray;
+                padding:1%;
+                margin:1%;
+                float:left;
+                position:relative;
+                height:100px;
+            }
+            
+            .grid:nth-child(1){
+                top:5px;
+            }
+            
+             .grid:nth-child(2){
+                top:10px;
+            }
+            
+             .grid:nth-child(3){
+                top:15px;
+            }
+            
+            .wrapper::after{
+                content:"";
+                display:block;
+                clear:both;
+                
+            }
+            
+            .content2{
+                padding:1%;
+                margin-top:2%;
+                -webkit-column-count:3;
+                column-count:3;
+                -webkit-column-gap:50px;
+                column-gap:50px;
+                -webkit-column-rule:1px solid gray;
+                column-rule:1px solid gray;
+                text-align:justify;
+                font-family:'고양덕양 EB';
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <h2>Position Property - static, relative, absolute, fixed, inherit</h2>
+            <p>relative는 해당 엘리먼트를 왼쪽, 오른쪽, 위, 아래로부터 offset할수있게 해준다.음수 값도 가능하다.무엇보다 중요한 것은 이 속성이 이 엘리먼트를 normal document flow로부터 제거하지 않는다는 것이다.이 엘리먼트는 여전히 content div의 위치를 점유하고 있다.(occupy).즉, 같은 위치안에 머무르면서,단지 visually offsetting하는 것이다.만약 content div밑에 다른 엘리먼트가 있고, content div의 offset을 top:300px이라고 한다면 엘리먼트가 서로 겹쳐지게 될것이다.그리고 원래 공간은 비어있게 된다. 이것은 그것이 여전히 normal document flow에서 위치를 가지고 있다는 의미이다.</p>
+        </div>
+       <div class="wrapper">
+        <div class="grid">gird1</div>
+        <div class="grid">gird2</div>
+        <div class="grid">gird3</div>
+       </div>
+       <div class="content2">
+        <p>여기서는 grid div의 position property를 relative로 주고 높이를 약간 다르게 함으로써 디자인에 변화를 주었다.grid에 position:relative를 주고 grid:nth-child(n)에 top의 속성값을 조금씩 다르게 주면 완성된다.위치를 약간씩 tweak 하고 싶을때 사용할 수 있다.   </p>
+        <p>또한가지, position:relative의 사용법이 있는데, 그것은 in conjunction with position:absolute일때 이다.어떤 엘리먼트에 position:absolute를 놓았다는 것은 그 엘리먼트를 절대적으로 어느 위치에 놓았다는 것이다.it means that we position it absolutely relative to the parent element which has a position relative attached. 이것에 대하여 다음 강의에서 설명하도록 한다.</p>
+       </div>
+    </body>
+</html>

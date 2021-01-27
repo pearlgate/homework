@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                font-family:verdana;
+                margin:0;
+            }
+            body{
+                background:#eee;
+            }
+            .wrapper,.wrapper2{
+                width:100%;
+                max-width:1200px;
+                margin:20px auto;
+                background-color:#fff;
+            }
+            .wrapper2{
+                padding:10px;
+                box-sizing:border-box;
+            }
+            .flex-container {
+                display:flex;
+                flex-flow:column;
+                height:1000px;
+                justify-content:center;
+                align-items:center;
+            }
+/*
+            .flex-container:after{
+                content:"";
+                display:block;
+                clear:both;
+            }
+*/
+            .box{                
+                flex:0 0 100px;
+                height:100px;
+                width:100px;
+            }
+            .one{
+                background:red;
+            }
+            .two{
+                background:blue;
+            }
+            .three{
+                background:green;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+          <div class="flex-container">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">
+            <p>flex를 가로로 적용하지 않고 세로로 적용할 수 있다. 이것에 관련된 속성은 flex-flow인데, flex-flow:column을 하면 된다. </p>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">
+            <p>여기서 flex속성의 flex-basis는 자동적으로 세로 길이에 적용된다. height를 100으로 설정했을지라도, flex-basis값이 200이면 200으로 조정된다. </p>
+          </div>
+        </div>
+         <div class="wrapper2">
+          <div class="content">
+            <p>flex-flow의 디폴트 값은 row이다. </p>
+          </div>
+        </div>
+         <div class="wrapper2">
+          <div class="content">
+            <p>flex-flow의 값으로 row-reverse, column-reverse등도 있다. 이것들은 반대 방향에서 시작한다. </p>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">
+            <p>main axis는 flex-flow가 적용되는 방향을 의미하고, cross axis는 그것의 직각방향을 의미한다. </p>
+          </div>
+        </div>
+         <div class="wrapper2">
+          <div class="content">
+            <p>justify-content는 main axis방향에 속성이고, align-items는 cross axis방향에 대한 것이다. 값으로는 center, flex-end, flex-start,space-between, space-around, space-evenly등이 있다. </p>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">
+            <p>display:flex를 적용하는 택에 넓이나 높이를 nested 택의 길이보다 크게 하면, justify-content, align-items를 이용하여 위치를 바꿀 수 있다. </p>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">
+            <p>align-items:center, justify-content:center로 놓으면, 정 중앙에 위치 시킬 수 있다.</p>
+          </div>
+        </div>
+        
+    </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Position Fixed</title>
+       <style>
+             body {
+            background:#eee;
+            }
+            .wrapper {
+                background:#fff;
+                margin:0 auto;
+            }
+            .grid {
+                float:left;
+                width:29%;
+                padding:1%;
+                margin:1%;
+                border:1px solid gray;
+                height:100px;
+                background:#f2f2f2;
+                position:relative;
+            }
+            
+            .grid:nth-child(1){
+                top:5px;
+            }
+            
+            .grid:nth-child(2){
+                top:10px;
+            }
+            
+            .grid:nth-child(3){
+                top:15px;
+            }
+            
+            .grids::after {
+                content:"";
+                display:block;
+                clear:both;
+            }
+            
+            .content {                
+                padding:1%;
+                margin:20px auto 0; 
+                font-family:'고양덕양 B';
+                line-height:2em;
+            }
+            
+            #banner {              
+                max-height:340px;
+                overflow:hidden;
+                margin:1%;
+                position:relative;
+                
+            }
+            
+            #banner h2 {
+                position:absolute;
+                top:300px;                
+                margin:0;
+                width:100%;
+                text-align:center;
+                color:red;
+            }
+          
+           
+           ul {
+               list-style:none;
+               border:1px solid gray;
+              
+              
+               margin:0;
+              
+               
+           }
+           
+           nav {
+               position:fixed;
+               top:0;
+               left:0;
+               width:100%;
+               background:#000;
+           }          
+           
+           nav ul::after {
+               content:"";
+               display:block;
+               clear:both;
+           }
+           
+           li {
+               width:20%;
+               margin:1% 1.5%;               
+               padding:1%;
+               height:40px;
+               float:right; 
+               font-size:20px;
+               line-height:2em;
+               color:#fff;
+               font-family:'고양덕양 B';
+           }
+        </style>
+    </head>
+    <body>
+         <div class="wrapper">
+            <div id="banner">
+                <img src="image/boxModel.png" style="width:100%;">
+                <h2>The Net Ninja</h2>
+            </div>
+            <div class="grids">
+                <div class="grid">grid1</div>
+                <div class="grid">grid2</div>
+                <div class="grid">grid3</div>
+            </div>
+            <div class="content">
+                <h2>Content</h2>
+                <p>Fixed position을 설명하기 위해서 navigation bar를 만들기로 한다. nav tag안에 ul tag, 그안에 li tag을 만들고 text를 기입한다. 이들은 block-level-element이므로 가로 100%의 초기값을 가지고 있다. 거기에 css float속성을 주고 position:fixed를 준다음 left,top등의 값을 이용해서 위치를 정해주면 스크롤바를 아무리 내릴지라도 이들은  보여지는 스크린에서 항상 그 자리에 있다.</p>
+                <p>이때, fixed position은 엘리먼트를 normal document flow에서 벗어나게 한다는 것을 잊지말자. 그래서 원래 위치에는 아무것도 occupy하는 것이 없게 된다.</p>
+                
+            </div>
+         
+            <nav>
+                <ul>
+                    <li>Relative</li>
+                    <li>Absolute</li>
+                    <li>Fixed</li>
+                    <li>Position</li>
+                
+                </ul>
+            </nav>
+        </div>        
+    </body>
+</html>

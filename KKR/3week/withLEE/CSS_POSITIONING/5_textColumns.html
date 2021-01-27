@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Text Columns</title>
+        <style>
+            .content p{
+                -webkit-column-count:3;
+                column-count:3;
+                -webkit-column-gap:50px;
+                column-gap:50px;
+                -webkit-column-rule:1px solid #ccc;
+                column-rule:1px solid #ccc;
+                text-align:justify;
+                
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="content">
+            <h2>CSS Multy-Column Properties</h2>
+            <p>text 문구를 여러 컬럼으로 나누어 스타일링 할 수 있다.이에 필요한 속성은 column-count(컬럼수), column-gap(column사이의 갭), column-rule-style(컬럼사이의 룰의 스타일), column-rule-width,column-rule-color가 있고, column-rule은 border처럼 한번에 표현할 수 있는 방법이다. 예를 들면, column-rule:1px solid lightblue;. column-span은 element가 얼마나 많은 컬럼을 span across하는지를 특정한다. 이밖에도 column-width, columns(column-width와 column-count를 세팅하는 shorthand property), column-fill(specifies how to fill columns)가 있다.  </p>
+            <p>웹에서 css를 적용할때, webkit,moz, ms,o 접두어가 붙는 경우가 있는데, 이것은 크로싱 브라우저를 위해서 필요하기 때문이다.<br>
+            -webkit-:구글, 사파리 브라우저에 적용<br>-moz-:파이어폭스에 적용<br>
+            -ms-:익스플로러에 적용, 보통 생략<br>
+            -o-:오페라에 적용</p>
+            <p>text-align의 값으로는 left(왼쪽정렬),right(오른쪽정렬),center(가운데정렬),justify(양쪽정렬),initial(기본값),inherit(부모요소의 속성값 상속)</p>
+        </div>
+        
+       
+        
+    </body>
+</html>

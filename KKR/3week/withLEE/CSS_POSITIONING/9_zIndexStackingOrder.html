@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Position Fixed</title>
+       <style>
+             body {
+            background:#eee;
+            }
+            .wrapper {
+                background:#fff;
+                margin:0 auto;
+            }
+            .grid {
+                float:left;
+                width:29%;
+                padding:1%;
+                margin:1%;
+                border:1px solid gray;
+                height:100px;
+                background:#f2f2f2;
+                position:relative;
+            }
+            
+            .grid:nth-child(1){
+                top:5px;
+            }
+            
+            .grid:nth-child(2){
+                top:10px;
+            }
+            
+            .grid:nth-child(3){
+                top:15px;
+            }
+            
+            .grids::after {
+                content:"";
+                display:block;
+                clear:both;
+            }
+            
+            .content {                
+                padding:1%;
+                margin:20px auto 0; 
+                font-family:'고양덕양 B';
+                line-height:2em;
+            }
+            
+            #banner {              
+                max-height:340px;
+                overflow:hidden;
+                margin:1%;
+                position:relative;
+                z-index:0;
+               
+                
+            }
+            
+            #banner h2 {
+                position:absolute;
+                top:300px;                
+                margin:0;
+                width:100%;
+                text-align:center;
+                color:red;
+                 z-index:2;
+            }
+          
+           
+           ul {
+               list-style:none;
+               border:1px solid gray;
+              
+              
+               margin:0;
+              
+               
+           }
+           
+           nav {
+               position:fixed;
+               top:0;
+               left:0;
+               width:100%;
+               background:#000;
+               z-index:1;
+           }          
+           
+           nav ul::after {
+               content:"";
+               display:block;
+               clear:both;
+           }
+           
+           li {
+               width:20%;
+               margin:1% 1.5%;               
+               padding:1%;
+               height:20px;
+               float:right; 
+               font-size:20px;
+               line-height:20px;
+               color:#fff;
+               font-family:'고양덕양 B';
+           }
+        </style>
+    </head>
+    <body>
+         <div class="wrapper">
+             <nav>
+                <ul>
+                    <li>Relative</li>
+                    <li>Absolute</li>
+                    <li>Fixed</li>
+                    <li>Position</li>
+                
+                </ul>
+            </nav>
+            <div id="banner">
+                <img src="image/boxModel.png" style="width:100%;">
+                <h2>The Net Ninja</h2>
+            </div>
+            <div class="grids">
+                <div class="grid">grid1</div>
+                <div class="grid">grid2</div>
+                <div class="grid">grid3</div>
+            </div>
+            <div class="content">
+                <h2>Content</h2>
+                <p>지난 시간에는 nav tag을 맨 밑에 놓고 position:fixed를 주었더니 마치 맨 앞에 있는 것처럼 보이는 효과를 가져왔다. 이번 시간에는 nav tag을 위로 올려보자. 그러면, nav tag은 마치 뒤에 있는 것처럼 보이게 된다. 그것은 html을 작성할때 먼저 작성한 엘리먼트가 뒤에 배열되는 이치에 따른 것이다.그러면, nav tag을 맨 위에 작성하면서도 맨 앞에 있는 것처럼 보이게 하려면 어떻게 해야할까?</p>
+                <p>z-index를 3D dimension 또는 stacking dimension이라고 한다.그래서 stacking order를 명백하게 컨트롤하기 위해서 이 속성을 사용하면 default 값을 바꿀 수 있다. 보통 element들은 z-index 값을 0으로 갖는다. 그래서 1을 주면, 0인 엘리먼트보다 앞에 있다는 것이다.그래서 nav tag에 z-index:1을 주면 nav tag이 맨 앞에 나오는 것을 알 수 있다.</p>
+                <p>이번에는 banner tag에 있는 h2 tag에 z-index:2를 주면 어떻게 될까? 위치도 top:0;으로 옮겨 보았다. 그러면, nav bar보다 앞에 있는 것을 확인 할수 있다.스크롤을 내렸을때 h2가 nav보다 앞에 보이면 낭패이다. 그래서 스크롤을 내렸을때는 h2가 nav 밑으로 가게 하고 싶다.그렇게 하기위해서 h2 tag이 속해 있는 banner div에 z-index:0을 명시한다.그러면 h2 tag의 z-index:2가 무시된다는 것이다. 이때, banner div에는 position:relative가 명시되어야 한다. nav와 banner는 wrapper div의 자식 엘리먼트이다. left나 top,right을 포함하여 z-index 까지 위치값을 명시할 경우에는 먼저 position property를 써 주어야 한다. 그래서 position:relative를 써 준다. 그리고 h2의 z-index가 2라는 것은 h2가 속해있는 부모 엘리먼트에 상대적인 값이라는 것이다. body tag 바로 밑이라면 body tag에 상대적인 값이 되겠다. 부모 태그의 z-index값이 명시되어 있는 경우에는 그 자식 엘리먼트들이 그 제한을 받게 되는 것이다.  </p>
+                
+            </div>
+         
+            
+        </div>        
+    </body>
+</html>

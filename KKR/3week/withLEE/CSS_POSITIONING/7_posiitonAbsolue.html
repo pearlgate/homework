@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Position Absolute</title>
+        <style>
+        body {
+            background:#eee;
+            }
+            .wrapper {
+                background:#fff;
+                margin:0 auto;
+            }
+            .grid {
+                float:left;
+                width:29%;
+                padding:1%;
+                margin:1%;
+                border:1px solid gray;
+                height:100px;
+                background:#f2f2f2;
+                position:relative;
+            }
+            
+            .grid:nth-child(1){
+                top:5px;
+            }
+            
+            .grid:nth-child(2){
+                top:10px;
+            }
+            
+            .grid:nth-child(3){
+                top:15px;
+            }
+            
+            .grids::after {
+                content:"";
+                display:block;
+                clear:both;
+            }
+            
+            .content {                
+                padding:1%;
+                margin:20px auto 0; 
+                font-family:'고양덕양 B';
+                line-height:2em;
+            }
+            
+            #banner {              
+                max-height:340px;
+                overflow:hidden;
+                margin:1%;
+                position:relative;
+                
+            }
+            
+            #banner h2 {
+                position:absolute;
+                top:300px;                
+                margin:0;
+                width:100%;
+                text-align:center;
+                color:red;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="banner">
+                <img src="image/boxModel.png" style="width:100%;">
+                <h2>Box Model</h2>
+            </div>
+            <div class="grids">
+                <div class="grid">grid1</div>
+                <div class="grid">grid2</div>
+                <div class="grid">grid3</div>
+            </div>
+            <div class="content">
+                <h2>Content</h2>
+                <p>position:relative의 또 다른 사용법은 position:absolute와 연계되어 사용되는 부분이다. position:absolute라는 것은 위치가 절대적이라는 의미인데, 또한 부모 엘리먼트가 position:relative일때 그 부모의 위치에 대해서 절대적인 값을 갖고 있다는 것을 뜻한다.</p>
+                <p>위의 이미지가 있는 banner div에 css position:relative를 주고 max-height:300px을 주면 grid 들이 이미지 위로 올라간다.이때 이미지의 높이는 주지 않은 상태이고, 이미지 밑에는 h2 tag가 있는데 이것들 위로 그리드가 올라가 있는 상태이다.왜냐하면, 이미지와 h2 tag의 길이가 300보다 크기 때문이다. 만약 이미지의 높이를 300px로 주더라도 그리드들은 h2위로 올라가게 된다. 이때, overflow:hidden을 주면, 그리드 밑에 있던 이미지나 h2 tag이 안보이게 된다.그리고 나서 h2 tag에 position:abolute를 주면 이미지의 아래부분은 안 보이지만 h2는 보이게 된다. 왜냐하면 위치가 absolute이니까. 그리고 h2의 글자들은 grid나 content와 겹쳐보이게 될건데, 이것은 h2가 normal document flow를 벗어났다는 것을 의미한다. 이 상태에서 banner div와 banner div안에 있는 h2 tag을 relative와 absolute로 위치 조정을 하는 것이다. h2 tag은 banner div안에 있으므로 banner div에 position:relative를 주고, h2 tag에 position:absolute를 주면, h2는 banner div를 기준으로 절대값을 갖는다.그리고 명심해야 할 것은 when we position something absolutely it removes it for normal document flow.</p>
+            </div>
+        
+        
+        </div>
+        
+        
+        
+    </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+    <title>How to Vertically Center Text with Flexbox</title>
+    <meta charset="UTF-8">
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        body{
+            margin:0;
+            
+        }
+        ul{
+            list-style-type:none;
+            margin:0;
+            padding:0;
+        }
+        nav{
+            background:#525252;
+        }
+        a{
+            text-decoration:none;
+            font-size:25px;
+            color:#fefefe;
+            line-height:3em;
+            text-transform:uppercase;
+            padding:10px;
+            display:block;
+        }
+        .social{
+            display:flex;
+            justify-content:center;
+        }
+        .social li{
+            height:80px;
+        }
+        ul li{
+            text-align:center;
+        }
+        img{
+            padding:10px;
+        }
+        a.tw{
+            background:url(image/tw.png) no-repeat center;
+            background-size:100%;
+        }
+        a.fb{
+            background:url(image/fb.png) no-repeat center;
+            background-size:100%;
+        }
+        .social a{
+          text-indent: -10000px;/*display:block을 하지않으면 안 없어짐*/
+        }
+        
+        @media screen and (min-width:768px){
+            
+            nav{
+            display:flex;
+            justify-content:space-between;
+            }
+            .menu{
+                display:flex;
+                
+            }
+            .social li{
+                flex:1 1 100px;
+                padding:0% 5%;
+            }
+            .social{
+                flex-basis:100px;
+                margin-right:10px;
+            }
+            .menu a{
+                padding:0 40px;
+            }
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <ul class="menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Store</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+             <ul class="social">
+                <li><a href="" class="fb">Facebook</a></li>
+                <li><a href="" class="tw">Twitter</a></li>   
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

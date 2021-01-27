@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Composed Path</title>
+    <style>
+        p , a{
+            width:20%;
+
+            margin:20px;
+            padding:30px;
+            border:2px solid #000;
+            display:inline-block;
+
+        }
+      </style>
+  </head>
+  <body>
+     <h1>BoxModelReview</h1>
+    
+      <p>
+        element는 width와 height로 크기를 잡고,그 element를 둘러싸는 것이 padding,border,margin이다.이것을 box model이라고 한다.box model은 display:block인 모델에만 해당되고 inline에는 해당되지 않는다.
+      </p>
+      <p>
+        p tag는 block element이고 a tag은 inline element이다. 그래서 p는 한 줄을 다 차지하고 a는 서로 옆으로 나란히 배열된다.즉, block level element(ex)p tag)은 by default, take up 100% width of the page,whereas a tag takds up the room of the element itself.
+      </p>
+      
+      
+      <a href="">a tag1</a>
+      <a href="">a tag2</a>
+    
+      <p>
+       style tag에서 p와 a에 width, margin,padding, border의 값을 주면, inline에서는 제대로 안 먹는 것을 볼수있다.일단, width,margin-top,margin-bottom이 안먹고, padding은 어느정도 먹지만, inline이라서 위에 있는 element를 좀 먹어들어 갔다. border는 먹는다. 그런데 이 상태에서 a tag의 스타일에 display:block을 주면 block-level-element로 바뀌어 p tag과 같이 배열된다.
+      </p>
+      <p>
+      만약 display:inline-block이라고 하면 두 개의 장점만 믹싱된 스타일이 되는데, we can have that inline ability of stacking left and right but we can also apply these other box model properties to it. 만약, width:20%라고 하면 오른쪽 왼쪽으로 차례로 배열되면서도 margin,padding등이 적용된다.
+      </p>
+  </body>
+</html>

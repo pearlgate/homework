@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+           *{
+               margin: 0;
+           }
+
+           body {
+               background-color: brown;
+           }
+
+           .wrapper, .wrapper2 {
+            border: 2px solid black;
+            background-color: coral;
+            width: 80%;
+            margin: 40px auto;
+            box-sizing: border-box;
+            max-width: 960px;
+           }
+
+           .wrapper2 {
+               padding: 2rem;
+           }
+
+           .flex-container {
+               display: flex;
+               /* flex-wrap: wrap; */
+           }
+
+           .box {
+               height: 100px;
+               flex-basis: 200px;
+           }
+           .one {
+               background-color: blue;
+               flex: 1;
+               
+           }
+           .two {
+               background-color: blueviolet;
+               flex: 1;
+              
+           }
+           .three{
+               background-color: burlywood;
+               flex: 1;
+               
+           }
+
+           
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+          <div class="flex-container">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">
+            <p>float와 display:flex의 차이점은, box div를 감싸는 flex-container가 block element로 나타나 있는가 아닌가 이다.float의 경우에는 flex-container:after{content:"";display:block;clear:both;}를 해주어야 블럭으로 나타난다. </p>
+          </div>
+        </div>
+        
+    </body>
+</html>

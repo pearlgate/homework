@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Floating Columns</title>
+        <style>
+            body{
+                background:#eee;
+                 font-family:Arial;
+            }
+            .main{
+                background:#fff;
+            }           
+            
+            .columns::after {
+                content:"";
+                display:block;
+                clear:both;
+            }
+            .wrapper::after {
+                content:"";
+                display:block;
+                clear:both;
+            }
+            .grid {
+                height:100px;
+               
+                width:29%;
+                float:left;
+                margin:1%;
+                padding:1%;
+                line-height:5em;
+                text-align:center;
+                background:#eee;
+            }
+            .content, .columns{
+                
+                margin:0px,1%;
+                padding:10px;
+            }
+            
+            section, aside {
+                
+                float:left;
+                width:46%;
+                margin:1%;
+                padding:1%;
+                background:#f2f2f2;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="wrapper">
+                <div class="grid">grid1</div>
+                <div class="grid">grid2</div>
+                <div class="grid">grid3</div>       
+            </div>
+            <div class="content">
+                <h2>Content</h2>
+                <p>여태까지 float property를 이용해서 grid를 만들고 그것을 감싸고 있는 디브에 ::after를 통해 clear,content,display속성을 줌으로써 content div에서 normal    document flow를 다시 시작했습니다.</p>
+            </div>
+            <div class="columns">
+                <section>
+                    <h2>This is column 1</h2> 
+                    <p>columns div안에 section과 aside tag을 놓고 각각의 안에 h2,p tag을 공통으로 놓고 aside tag에는 img tag을 추가했습니다. </p>
+                    <p>어떤 css도 주지 않은 상황에서 이것들은 그냥 block-level-element로서 넓이 100%를 차지하고 나타나 있습니다.</p>
+                </section>
+                <aside>
+                    <h2>This is column 2</h2>
+                    <p>이제 section과 aside tag에 float property를 주고 넓이와 마진과 패딩을 적용하고 배경색을 바꾸어 위치를 조정합니다.</p>
+                    <img src="image/boxModel.png" style="width:100%;height:100px;">
+                </aside>
+            </div>
+       </div>
+        
+        
+    </body>
+</html>
+

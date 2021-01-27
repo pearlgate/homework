@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Floating Elements</title>
+        <style>
+            body {
+                background:#ccc;
+            }
+            
+            .wrapper, .wrapper2, .wrapper3, .wrapper4, .wrapper5, .wrapper6 {
+                background:#fff;
+                max-width:960px;
+                margin:10 auto;
+                padding:20px;
+            }
+            
+            .wrapper::after,.wrapper3::after{
+                content:"";
+                display:block;
+                clear:both;
+            }
+            .positioning{
+                float:left;
+                margin:10px;
+            }
+            
+            .positioning_right {
+                float:right;
+                margin:10px;
+            }
+            
+            .blue {
+                background:blue;
+            }
+            
+            .red {
+                background:red;
+            }
+            
+            .green {
+                background:green;
+            }
+            
+            .box {
+                height:100px;
+            }
+            .clearFloat::after {
+                content:"";
+                display:block;
+                clear:both;                
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="wrapper">
+            <p>floating is one of the most used techniques in page layouts for positioning content.It lets us position an element to the very left or the very right of a parent element and in doing so it removes itself on that normal document flow we've been talking about. </p>
+             <p>초기에는 개발자가 이미지 주변으로 글자를 wrap할수 있게 하기위해 쓰였지만, 지금은 다른 것에도 유용하게 쓰는데, 문자 컬럼이나 그리드 갤러리등을 만드는데 쓰인다. 먼저 택스트로 싸여진 이미지를 예로 들어 보자. </p>
+            <img src="image/boxModel.png" width="300">
+            <p>지금 이상태에서 보면 이 글이 쓰여지고 있는 img tag, p tag는 css positioning을 주지 않는 상태에서는 block-level-element이므로 이미지 밑에 오게 된다. 그런데 img에 float:left를 주게되면 아래와 같이</p>
+            <img src="image/boxModel.png" class="positioning" width="300">
+            <p>text가 오른쪽에 오게 된다.그리고 margin:10px을 주게되면 이미지와 글자가 조금 떨어져서 보기가 좋다.</p>
+            <p>이번에는 이미지의 크기를 아주 작게 하고 float:right을 주어보자.</p>
+            <img src="image/boxModel.png" class="positioning_right" width="20">
+            <p>이미지가 오른쪽으로 가고 문단이 왼쪽에 표시되고 문단이 이미지 보다 길이가 길면 이미지를 감싸는 방식으로 배열되는 것을 알수 있다.이미지가 오른쪽으로 가고 문단이 왼쪽에 표시되고 문단이 이미지 보다 길이가 길면 이미지를 감싸는 방식으로 배열되는 것을 알수 있다.그리고 이미지 밑으로 p tag의 블럭이 잡히는 것도 보았다.</p>
+            <p>wrapper div의 max-width를 960px로 놓았는데, 960px까지는 margin:10 auto가 먹는다. 그러나 그 후로는 먹지 않는다는 것을 발견했다.max-width를 100%로 놓으니, 화면을 줄이던 늘이던, 늘 가운데에 wrapper가 놓여있다. 그리고 이미지 밑으로 p tag의 블럭이 잡히는 것도 보았다.</p>            
+        </div>
+       
+        <div class="wrapper2">
+            <p>div tag을 이용해서 세개의 박스를 색깔별로 만들었다.이때 width를 주지 않았고 block-level-element이므로 100%의 값을 초기값으로 가진다.</p>
+            <div class="blue box"></div>
+            <div class="red box"></div>
+            <div class="green box"></div>
+            <p>이때 width:50으로 주면 왼쪽으로 박스가 쌓이고 그다음 blue box를 float:right으로 주면 blue box는 오른쪽으로, 나머지 박스는 위로 올라가 자리를 채운다.</p>
+            <div class="blue box" style="float:right; width:100px;"></div>
+            <div class="red box" style="width:100px;"></div>
+            <div class="green box" style="width:100px;"></div>
+            <p>왜냐하면 이 블루 박스는 normal document flow에서 벗어나 있으므로 normal document flow에서 더이상 어떤 높이도 점유하지 못한다. 그래서 마치 블루박스가 없는 것처럼 다른 박스들은 그냥 위로 올라가게 된다. float 속성을 가진 블루박스는 지금 현재 마진의 영역이 없다. 그러나 다른 박스들은 block-level-element로서 width를 제외한 부분들이 마진으로 나타난다. </p>
+             <p>이번에는 red box를 float:left를 주면 어떻게 될까? 아래와 같이 red box와 green box가 겹쳐지게 된다. green box의 존재를 보기위해서 red box에 margin을 주었다.</p>
+             <div class="blue box" style="float:right; width:100px;"></div>
+            <div class="red box" style="float:left; width:100px;margin-left:10px;"></div>
+            <div class="green box" style="width:100px;"></div>
+            <p>다시 모든 박스들에 float:right을 주면 모든 박스가 오른쪽에 몰리게 된다.이때, 아래와 같이 박스들은 디브의 끝에 걸쳐있게 되는데, 이것은 정상문서흐름을 벗어난 float성질을 갖고있기 때문이다.그러니까, div가 float속성을 갖고 있으면, width,padding,margin등의 성질은 유지되지만, 정상문서흐름에 포함되지는 않는다는 것이다.그런데, 여기서 css에 .wrapper2::after{content:"";display:block;clear:both;}를 첨가하면, 이 박스들이 wrapper2 div안으로 들어오게 된다.</p>
+             <div class="blue box" style="float:right; width:100px;"></div>
+            <div class="red box" style="float:right; width:100px;"></div>
+            <div class="green box" style="float:right; width:100px;"></div>
+        </div>
+        
+        <div class="wrapper3" style="margin-top:60px;">
+            <p>이번에는 float css property를 이용해서 그리드 갤러리를 만들어 봅니다. </p>
+            <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;">grid1</div>
+            <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;">grid2</div>
+            <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;">grid3</div>
+            
+            <p>이 상태에서 width와 float을 줍니다. </p>
+            <div class="service" style="height:100px;border:1px solid gray;width:29%;float:left;text-align:center;line-height:5em;">grid1</div>
+            <div class="service" style="height:100px;border:1px solid gray;width:29%;float:left;text-align:center;line-height:5em;">grid2</div>
+            <div class="service" style="height:100px;border:1px solid gray;width:29%;float:left;text-align:center;line-height:5em;">grid3</div>
+            
+             <p style="margin-top:150px;">이제 margin과 padding을 줌으로써 간격을 보기좋게 넓힙니다. </p>
+            <div class="service" style="height:100px;border:1px solid gray;width:29%;float:left;margin:1%;padding:1%;text-align:center;line-height:5em;">grid1</div>
+            <div class="service" style="height:100px;border:1px solid gray;width:29%;float:left;margin:1%;padding:1%;text-align:center;line-height:5em;">grid2</div>
+            <div class="service" style="height:100px;border:1px solid gray;width:29%;float:left;margin:1%;padding:1%;text-align:center;line-height:5em;">grid3</div>
+            <p >이때, 이 p tag이 없다고 한다면, grid들이 wrapper3안에 있는 마지막 엘리먼트라면, wrapper3::after에 display:block;을 추가하지 않을 경우, grid들은 wrapper의 height 안에 포함되지 못하고 걸쳐 있게 됩니다.왜냐하면, 그것은 normal document flow를 벗어나기 때문에(take out) float property를 갖고 있는 엘리먼트 안에 있는 무엇이든지 위로 솟구치게 됩니다.(scooted upwards).floated element는 더이상 normal document flow에서 어떤 height도 occupy하지 못합니다. </p>
+       </div>     
+        <div class="wrapper4" style="margin-top:30px;">
+            <p >만약, grid div들을 싸고 있는 디브를 만들고 그 안에 어떤 block-level-element도 없으며, grid div들이 float property를 갖고 있다면, 싸고 있는 디브는 어떤 높이도 갖지 못하고 grid div들의 천정위에 붙어있게 될겁니다.그 디브에 어떤 높이를 주지 않는다면. 아래에서 그렇게 만들어 볼까요?</p>
+            <div style="border:1px solid blue;">
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29%;margin:1%;">grid1</div>
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29%;margin:1%;">grid2</div>
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29%;margin:1%;">grid3</div>
+            </div>
+            <p>위에서 파란 줄이 바로 grid div들을 감싸고 있는 div입니다. 그럼 이 상태에서 class name이 content인 디브를 만들고 내용을 주고 css를 주면 어떻게 될까요?그 content div는 파란 줄 디브의 바로 아래부터 시작하게 될겁니다.만약, content div에 배경색을 주면 float상태에 있는 grid들 뒤로 그 배경색이 나타날겁니다.</p>
+            <div style="border:1px solid blue;">
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29%;margin:1%;">grid1</div>
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29%;margin:1%;">grid2</div>
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29%;margin:1%;">grid3</div>
+            </div>
+            <div class="content" style="background:gold;padding:10px;">
+                <h2>Content</h2>
+                    <p>content div안에 있는 텍스트는 grid div들 밑에서부터 시작되지만, 배경색은 파란색 디브 밑에서 부터 시작됩니다.</p>                
+            </div>
+            <p>그래서, 이런 경우에 content div를 float된 grid div들 밑에서부터 시작하게 하려면 clear those floats해야만 하고 normal document flow에게 '여보슈,위에있는float를 끝내고 여기서부터 새롭게 normal document flow를 시작하겠소'라고 말해주어야 합니다.그것이 바로 clear속성입니다.그것에 관한 코딩은 다음과 같습니다. </p>
+             <div style="border:1px solid blue;">
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29.33%;margin:1%;">grid1</div>
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29.33%;margin:1%;">grid2</div>
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29.33%;margin:1%;">grid3</div>
+             </div>
+             <div class="content" style="background:gold;padding:10px;clear:left;margin-top:100px;">
+                <h2>Content</h2>
+                    <p>content div에 clear 속성을 줌으로 normal document flow를 새롭게 시작합니다.</p>  
+                    <p> clear 속성에는 left,right,또는 both가 있는데, 여기서는 float를 left로 주었으므로 left나 both를 사용합니다.</p>
+                    <p> 그런데, 이경우에 한가지 주의할 점이 있습니다.content div에 margin-top을 주더라도 그것이 grid div들과 content div와의 간격을 넓히지 못한다는 것이죠. margin은 아무리 높은 값을 주더라도 grid div들의 영역안으로 잡힐 뿐입니다.</p>
+                    <p> 이것을 해결하는 방법 중 한가지는 grid div들과 content div 사이에 디브를 하나 넣어서 거기에 clear속성을 준다는 것입니다.</p>
+                
+              </div>
+         </div>
+        <div class = "wrapper5" style="margin:30px;">
+            <div style="border:1px solid blue;">
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29.33%;margin:1%;">grid1</div>
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29.33%;margin:1%;">grid2</div>
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29.33%;margin:1%;">grid3</div>
+             </div>
+             <div style="border:1px solid green;clear:both;"></div>
+             <div class="content" style="background:gold;padding:10px;margin-top:30px;">
+                <h2>Content</h2>
+                    <p>green div가 추가된 디브입니다.</p>  
+                    <p> content div에 margin을 추가했고 간격이 벌어진 것을 확인할 수 있습니다.</p>
+                    <p>하지만 이 방법은 그리 권할만 하지는 않습니다.왜냐하면 별로 필요하지 않는 디브를 집어 넣었기 때문입니다.</p>
+                    <p>권장할 만한 방법은, grid div들을 감싼 디브에 대해 css에서 ::after를 통해서 clear 속성을 주는 것입니다. 감싼 디브의 class name을 clearFloat이라고 주고 css에서 clearFloat::after는 clearFloat div 다음을 의미합니다.</p>               
+              </div>      
+        </div> 
+        
+        <div class = "wrapper6" style="margin:30px;">
+            <div class="clearFloat" style="border:1px solid blue;">
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29.33%;margin:1%;">grid1</div>
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29.33%;margin:1%;">grid2</div>
+                <div class="service" style="height:100px;border:1px solid gray;text-align:center;line-height:5em;float:left;width:29.33%;margin:1%;">grid3</div>
+             </div>
+             
+             <div class="content" style="background:gold;padding:10px;margin-top:30px;">
+                <h2>Content</h2>
+                    <p>clear만을 위한 디브는 삭제했습니다.</p>  
+                    <p> clearFloat div의 css속성 중 content는 들어갈 텍스트를 의미합니다.만약 무언가를 써넣는다면 화면에 표시될 겁니다.</p>
+                    <p>display:block; clear:both라고 써줍니다.</p>
+                    <p>이때, clearFloat div(파란색 디브)는 높이를 갖게되고 grid div들을 온전히 감싸게 됩니다.</p>               
+              </div>      
+        </div>  
+        
+        
+    </body>
+</html>

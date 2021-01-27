@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                font-family:verdana;
+                margin:0;
+            }
+            body{
+                background:#eee;
+              
+            }
+            .wrapper,.wrapper2{
+                width:100%;
+                max-width:960px;
+                margin:20px auto;
+                border:1px solid gray;
+                background-color:#fff;
+            }
+            .wrapper2{
+                padding:10px;
+                box-sizing:border-box;
+            }
+            .flex-container {
+                display:flex;
+                flex-wrap:wrap;
+            }
+
+            .box{
+                height:100px;
+                min-width:200px;                
+                flex-grow:1;
+                
+            }
+            .one{
+                background:red;
+                
+            }
+            .two{
+                background:blue;
+                
+            }
+            .three{
+                background:green;
+                
+            }
+ 
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+          <div class="flex-container">
+            <div class="box one"></div>
+            <div class="box two"></div>
+            <div class="box three"></div>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">
+            <p>이번에는 각 박스의 min-width:200px로 놓고, flex-grow:1로 놓고 flex-wrap 속성에 대해서 알아본다.</p>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">            
+            <p>화면을 줄여가다 보면,어느 상태에서 더이상 줄지 않고 밑에 스크롤바가 생기는 것을 알 수 있다.그것은, min-width를 설정했기때문에 브라우져에서 더이상 줄이는 것을 허락하지 않는 것이다. 이때 flex-wrap 속성을 설정하면, instead of going off the page,element를 다음 줄로 보낼 수 있다.  </p>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">            
+            <p>이 속성은 flex-container에 설정한다. flex-wrap:wrap으로 설정하면, 초록색 박스가 화면이 줄면서 밑줄로 내려가는데, 이때 화면 넓이를 다 차지하게 된다. 왜냐하면,각각의 박스의 비율을 1로 놨기때문에, 전체 공간을 차지하는 것이다. </p>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">            
+            <p>값을 wrap-reverse로 놓으면,초록색박스가 위줄로 올라가게 된다.  </p>
+          </div>
+        </div>
+        <div class="wrapper2">
+          <div class="content">            
+            <p>default값은 nowrap이다. </p>
+          </div>
+        </div>
+        
+        
+        
+    </body>
+</html>

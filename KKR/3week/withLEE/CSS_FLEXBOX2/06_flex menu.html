@@ -1,0 +1,74 @@
+<!DOCTYPEhtml>
+<html>
+<head>
+    <title>Flex Menu</title>
+    <meta charset="UTF-8">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        a {
+            display: inline-block;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #000000;
+            padding: 30px;
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+
+        a:hover {
+         background-color: gold;
+        }
+
+        .wrapper {
+            width: 80%;
+            margin: 0 auto;
+            min-width: 600px;
+        }
+
+        ul {
+            display: flex;
+            
+            justify-content: space-between;
+            background-color: cornflowerblue;
+
+        }
+
+         nav {
+            width: 100%;
+        }
+        body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+        html {
+            height: 100%;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Store</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>
