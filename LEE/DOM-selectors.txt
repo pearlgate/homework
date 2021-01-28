@@ -1,6 +1,6 @@
 DOM Selectors
 --------------
-getElementsByTagName
+getElementsByTagName		
 getElementsByClassName
 getElementById
 
