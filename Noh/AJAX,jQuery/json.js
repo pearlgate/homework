@@ -40,7 +40,13 @@ console.log(json);
 console.clear();
 json = JSON.stringify(rabbit);
 // console.log(rabbit);
-const obj = JSON.parse(json);
-console.log(obj);
+const obj = JSON.parse(json,(key, value)=>{
+    console.log(`key:${key}, value:${value}`);
+    return key==='birthDate'? new Date(value) : value ;
+});
+console.log(rabbit.birthDate.getDate());
+console.log(obj.birthDate.getDate());
 rabbit.jump();
-obj.jump();
+//rabbit을 serialize해서 JSON(string)으로 변환할 때 즉 stringfy(스트링화)할 때, 함수는 포함되지 않았다.
+//그리고 이것을 JSON에서 deserialize해서 즉, parse했기 때문에 Object(object)에는 함수가 없다.
+//obj.jump();
