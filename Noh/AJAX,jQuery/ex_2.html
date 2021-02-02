@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animated Selector</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
+    <style>
+        div{
+            background: yellow;
+            border: 1px solid #AAA;
+            width: 80px;
+            height: 80px;
+            margin: 0 5px;
+            float: left;
+        }
+        div.colored{
+            background:green;
+        }
+    </style>
+</head>
+<body>
+    <button id="run">run</button>
+
+    <div></div>
+    <div id="mover"></div>
+    <div></div>
+
+    <script>
+        $('#run').click(function(){
+            // 여러 div중 animaated가 적용된 div를 찾아서 클래스를 전환(div에 colored클래스를 넣었다가 뺏다가)해 준다.
+            $("div:animated").toggleClass("colored");
+        });
+
+        function animateIt(){
+            // jQuery에서 제공하는 animation동작을 수행하는 메서드
+            $('#mover').slideToggle("slow", animateIt);
+        }
+
+        animateIt();
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMLHttpRequest Test</title>
+</head>
+<body>
+    <div id="demo">
+        <h2>Ajax 뿌시기</h2>
+        <button type="button">덤벼라 AJAX야</button>
+        <article id="article"></article>
+    </div>
+    <script>
+        const showBtn = document.querySelector("#demo > button");
+
+        function showMsg(){
+            //ajax로 서버와 통신하기 위해서는 XMLHttpRequest()로 객체를 생성해야 한다.
+            let xhr = new XMLHttpRequest();
+            
+            //응답을 받는 경우 어떻게 처리할 지 적어주는 함수
+            xhr.onreadystatechange = function(){
+                //readyState === 4 =>서버에서 request 처리 완료, response 준비 된 상태 && this.status==200 => 성공
+                if(this.readyState == 4 && this.status == 200){
+                    //responseText =>response를 Text형태로 리턴
+                    document.getElementById("article").innerText = this.responseText;
+                }
+            };
+            
+            //open(method, url, async) => method: GET or POST, url: the server(file) location, async: true(asynchronous) or false(synchronous)
+            xhr.open("GET", "ex_3.txt", true);
+            //sends the request to the server(used for GET)
+            xhr.send();
+            //if sends the request to the server used for POST => send(string)
+        }
+
+        showBtn.addEventListener("click", showMsg);
+    </script>
+</body>
+</html>

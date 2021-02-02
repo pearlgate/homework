@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch Test</title>
+</head>
+
+<body>
+    <button id="demoBtn">showText</button>
+    <p id="demo">Fetch a file to change this text</p>
+    <script>
+        const demoBtn = document.querySelector("#demoBtn");
+        demoBtn.addEventListener('click', function () {
+            //url을 담을 변수
+            let file = "ex_4F_info.txt";
+            //console.log(file);
+            //fetch(url, [options]); options => 선택 매개변수, method나 header 등을 지정할 수 있다. default = GET
+            //fetch()를 사용하면 브라우저는 네트워크 요청을 보내고 file이 반환. 반환되는 file은 호출하는 코드에서 사용.
+            // fetch(file)
+
+            // .then(x => x.text())
+            // .then(y => document.getElementById("demo").innerText = y);
+
+            let response = fetch(file);
+            // console.log(response);
+            let text = response.text();
+            console.log(text);
+
+
+        })    
+    </script>
+</body>
+
+</html>
