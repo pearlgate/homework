@@ -1,7 +1,7 @@
 package ProductPractice;
 
 class Tv extends Product{
-	Tv() {
+	Tv( ) {
 		super(100);
 	}
 	
