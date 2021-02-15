@@ -1,17 +1,18 @@
-package ProductPractice;
+package ProductPractice2;
 
+//물건에는 가격, 포인트가 있다.
 class Product {
 	private int price;
 	private int bonusPoint;
 	
-	public int getPrice() {
+	int getPrice() {
 		return price;
 	}
-	public int getbonusPoint() {
+	int getBonusPoint() {
 		return bonusPoint;
 	}
-	public Product(int price) {
+	Product(int price){
 		this.price = price;
 		bonusPoint = (int)(price/10.0);
-	}	
+	}
 }

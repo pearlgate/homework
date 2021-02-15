@@ -12,8 +12,8 @@ class Scv extends GroundUnit implements Repairable {
 	public void repair(Repairable r) {
 		if(r instanceof Unit) {
 			Unit u = (Unit)r;
-			while(u.hitPoint !=u.max_Hp) {
-				u.hitPoint++;
+			while(hitPoint !=u.getMax_Hp()) {
+				hitPoint++;
 			}
 			System.out.println("Scv가 치유되고 있습니다.");
 		}

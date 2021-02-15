@@ -1,6 +1,7 @@
 package ztarCraft;
 
 class Tank extends GroundUnit implements Repairable {
+	
 	void move(int x,int y) {
 		System.out.println("["+x+","+y+"]로 Tank가 이동되었습니다.");
 	}
@@ -10,8 +11,8 @@ class Tank extends GroundUnit implements Repairable {
 	public void repair(Repairable r) {
 		if(r instanceof Unit) {
 			Unit u = (Unit)r;
-			while(u.hitPoint !=u.max_Hp) {
-				u.hitPoint++;
+			while(hitPoint !=u.getMax_Hp()) {
+				hitPoint++;
 			}
 			System.out.println("Tank가 치유되고 있습니다.");
 		}
