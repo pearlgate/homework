@@ -1,0 +1,59 @@
+jQuery 명령어
+
+$('selector').css(function(){
+	
+});
+
+* css 
+ .css() : css style 값을 가져온다.
+
+* filter : :first, :last, :even, :odd, :not(주어진 조건과 다른 element),
+ :lt() n보다 작은 index를 가진 모든 element를 선택  
+ :gt() n보다 큰 index를 가진 모든 element를 선택
+ :eq() n번째 element를 선택
+
+특정 속성을 가지고 있는 특정 tag 선택
+.next() : sibling element 중 바로 다음에 위치한 element를 선택한다.
+.prev() : sibling element 중 바로 이전에 위치한 element를 선택한다.
+.parent() : element의 1단계 위인 element를 선택한다.
+.parents() : element의 모든 상위의 element를 선택한다.
+.children() : 1 단계 아래 레벨의 모든 element를 선택한다.
+.find() : 모든 하위 레벨의 element 중 주어진 조건과 매치되는 element를 선택한다.
+.closest() : 해당 element를 포함하여 주어진 조건과 매칭되는 가장 가까운 상위 element를 선택한다.
+
+* jQuery chaining
+
+* adding content : DOM객체 제어
+.append() : 입력받은 contents를 element의 마지막 위치에 추가한다.
+.prepend() : 입력받은 contents를 element의 시작 위치에 추가한다.
+.before() : 	''		''	앞에 추가한다.
+.after()  : 		''		''	뒤에 추가한다.
+.html() : html contents를 가져온다.
+.text() : text contents를 가져온다.
+.wrap() : 부모 element를 생성한다.
+.unwrap() : 부모 element를 제거한다.
+.wrapAll() : 다수의 element의 부모 element를 생성한다.
+
+* changing attribute
+.removeAttr(a,b) : 주어진 조건에 맞는 속성을 삭제한다.
+.attr(a,b) : 주어진 조건에 맞는 속성의 값을 만든다.
+
+* remove and add Class : element의 css class를 제어하는 메소드
+.removeClass() : class 명을 제거한다.
+.addClass() : class를 추가한다.
+.toggleClass() : class가 없는 경우에는 추가하고, 없는 경우에는 제거한다.
+
+* event
+.on()
+.off() : 한번 일어났던 이벤트가 또 일어나지 않도록 off( )를 해준다.
+
+* animation
+.animate()
+.hide() : element를 화면에서 사라지게 한다. css("display" : "none")과 같다.
+.show() : element를 화면에 보여지게 한다. css("display" : "block")과 같다. 
+.toggle()
+.slideUp() : element를 화면에 보여지게 할때, 크기를 조정한다. element의 height가 0이 되는 순간 display 속성을 "none"으로 설정한다.
+.slideDown() : element를 화면에 보여지게 할 때, 크기를 조정한다. 
+.fadeIn() : element를 화면에서 진해지게 한다.
+.fadeOut() : element를 화면에서 흐려지게한다. opacity가 0이되면 display 속성이 none으로 설정된다.
+.fadeTo()

@@ -39,7 +39,7 @@ class Buyer {
 		for(int i=0; i<cart.length; i++) {
 			if(cart[i]==null) break;
 			sum += cart[i].getPrice();
-			itemList += cart[i]+" , ";
+			itemList += cart[i]+", ";
 		}
 		System.out.println("구입한 총 금액은 "+sum+"만원입니다.");
 		System.out.println("구입한 물품은 "+itemList+"입니다.");
