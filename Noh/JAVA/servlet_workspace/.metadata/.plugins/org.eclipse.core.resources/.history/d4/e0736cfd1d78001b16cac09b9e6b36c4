@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="fridayProject.songs.entity.Artist"%>
+<%-- <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> --%>          
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#submit{
+		margin-top : 10px;
+		width : 150px;
+		height : 30px;
+	}
+</style>
+</head>
+<body>
+	<h1>Choose your favorite singer</h1>
+	<% Artist artist = new Artist(); %>
+	<form action="ChoosenSingerServlet" method="POST">
+	<% 
+	List<Artist> artists =(List<Artist>)request.getAttribute("artists");
+		for(int i =0; i<artists.size(); i++){
+			artist = artists.get(i);			
+	%>
+		<label><input type="radio" name="singer" value="<%=artist.getName()%>" /> <%= artist.getName() %></label><br>
+	<% 	} %>
+		<input id="submit" type="submit" value="choice">
+	</form>
+		
+			
+		
+
+	
+</body>
+</html>

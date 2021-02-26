@@ -1,0 +1,32 @@
+package com.g.entity;
+
+import java.util.Random;
+
+public class GameValue {
+	private int value;
+	
+	public GameValue() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public GameValue(int value) {
+		this.value = value;
+	}
+
+	public int getValue() {
+		return value;
+	}
+
+	public void setValue(int value) {
+		this.value = value;
+	}
+	
+	public void setRandom(int a, int b) {
+		Random rand = new Random();
+		this.value = rand.nextInt(1000)+a;
+	}
+	
+	public void increase() {
+		this.value++;
+	}	
+}

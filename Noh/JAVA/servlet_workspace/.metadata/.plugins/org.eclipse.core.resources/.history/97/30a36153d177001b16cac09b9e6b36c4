@@ -1,0 +1,6 @@
+package fridayProject.songs.entity;
+
+public class Artist {
+	private int id;
+	private String name;
+}

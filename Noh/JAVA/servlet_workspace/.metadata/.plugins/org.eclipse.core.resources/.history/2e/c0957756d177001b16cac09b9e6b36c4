@@ -1,0 +1,45 @@
+package fridayProject.songs.controller;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class SongsIndex extends HttpServlet {
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String url = "jdbc:mysql://localhost:3306/artists";
+		String sql = "select * from artist";
+		
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection(url, "root","0307");
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+			
+			while(rs.next()) {
+					int id = rs.getInt("_id");
+					String name = rs.getString("name");
+			}
+			
+			
+			rs.close();
+			st.close();
+			con.close();			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+}

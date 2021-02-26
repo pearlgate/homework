@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+C:\Users\Injae\work-space\servlet_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\499036277.index
+\randomNum\src
+C:\Users\Injae\work-space\servlet_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\72236879.index
+\fridayProject\src
+C:\Users\Injae\work-space\servlet_workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2569634943.index
+\jspServletStudy\src

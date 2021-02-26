@@ -1,0 +1,40 @@
+package com.g.controller;
+
+import java.io.Console;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.g.entity.GameValue;
+
+
+@WebServlet("/guess-number")
+public class Game extends HttpServlet {
+	
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int gNum_ = Integer.parseInt(request.getParameter("gNum"));
+		
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		PrintWriter out = response.getWriter();
+		
+		GameValue min = new GameValue(0);
+		GameValue max = new GameValue(1000);
+		GameValue ran = new GameValue();
+		String text = "";
+		
+		int random= ran.setRandom(max.getValue());
+		if(gNum_ == random) {
+			text="맞추셨습니다.";
+			request.setAttribute("text", text);
+		}
+	}
+
+}

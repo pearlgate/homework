@@ -1,0 +1,8 @@
+package fridayProject.songs.entity;
+
+public class Album {
+	String artistName;
+	String albumName;
+	int track;
+	String title;
+}

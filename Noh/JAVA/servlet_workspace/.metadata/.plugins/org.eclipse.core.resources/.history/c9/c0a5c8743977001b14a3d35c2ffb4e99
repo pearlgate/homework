@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="com.g.entity.GameValue"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+<%
+	GameValue min = new GameValue(0);
+	int minNum = min.getValue();
+	GameValue max = new GameValue(1000);
+	int maxNum = max.getValue();
+	
+	GameValue ran = new GameValue();
+	int random = ran.setRandom(max.getValue());
+	request.setAttribute("random", random);
+%>  
+	  <h2>새로 만든 페이지입니다. <%=minNum %> ~ <%=maxNum %>사이의 숫자를 넣어주세요.</h2>
+		<form action="getJspRandom.jsp">
+			<label>당신의 숫자는??</label><input type="text" name="guessNum"><br>
+			<input type="submit" value="제출">
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+package fridayProject.songs.dao;
+
+public class ChoiceSongs {
+
+}

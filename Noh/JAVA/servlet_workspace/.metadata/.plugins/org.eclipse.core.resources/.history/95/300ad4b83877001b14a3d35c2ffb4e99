@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="com.g.entity.GameValue"%>
+
+<%
+	GameValue ran = new GameValue();
+	GameValue max = new GameValue(5);
+	GameValue min = new GameValue(0);
+	GameValue hit = new GameValue(1);
+	
+	String text = request.getParameter("guessNum");
+	System.out.println(text);
+%>  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+	  
+	  <h2>새로 만든 페이지입니다.</h2>
+		<form action="getJspRandom">
+			<label>당신의 숫자는??</label><input type="text" name="guessNum"><br>
+			<input type="submit" value="제출">
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@page import="com.g.entity.GameValue"%>
+
+<%
+	GameValue ran = new GameValue();
+	GameValue max = new GameValue(5);
+	GameValue min = new GameValue(0);
+	GameValue hit = new GameValue(1);
+	
+	request.getAttribute("random");
+	
+	String text = "";
+	
+	if(gNum_ == random) {
+		text="맞추셨습니다.";
+		out.println(text);
+	}else if(gNum_ < random && gNum_ > min.getValue()) {
+		text = "숫자를 더 높여보세요.";
+		setAttri(request, response, url);
+	}else if(gNum_ > random && gNum_ < max.getValue()) {
+		text="숫자를 더 낮춰보세요.";
+		setAttri(request, response, url);
+	else {
+		text=min.getValue()+"와"+max.getValue()+"사이의 값을 넣어주세요.";
+		setAttri(request, response, url);
+}
+%>  
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+	  
+	  <h2>새로 만든 페이지입니다.</h2>
+		<form action="getJspRandom">
+			<label>당신의 숫자는??</label><input type="text" name="guessNum"><br>
+			<input type="submit" value="제출">
+		</form>
+	</div>
+</body>
+</html>

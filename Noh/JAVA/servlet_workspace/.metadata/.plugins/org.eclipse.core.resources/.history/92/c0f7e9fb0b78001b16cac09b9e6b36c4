@@ -1,0 +1,5 @@
+package fridayProject.songs.entity;
+
+public class Album {
+
+}

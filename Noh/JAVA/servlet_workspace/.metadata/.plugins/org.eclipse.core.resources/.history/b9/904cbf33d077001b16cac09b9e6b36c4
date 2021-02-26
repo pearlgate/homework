@@ -1,0 +1,5 @@
+package fridayProject.songs.controller;
+
+public class SongsIndex {
+
+}
