@@ -9,7 +9,7 @@ public class TrackCoach implements Coach {
 	private Service s;
 	
 	@Autowired
-	public TrackCoach(@Qualifier("hittingCoaching") Service s) {
+	public TrackCoach(@Qualifier("runningCoaching") Service s) {
 		this.s = s;
 	}
 
