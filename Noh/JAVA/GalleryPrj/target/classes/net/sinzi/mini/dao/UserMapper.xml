@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.sinzi.mini.dao.UserMapper">
+	<!--USER테이블 -->
+	<resultMap type="User" id="userResult">
+		<id property="id" column="id" />
+		<result property="nickName" column="nickname" />
+		<result property="email" column="email" />
+		<result property="password" column="password" />
+	</resultMap>
+
+	<!--PICTURE테이블 -->
+	<resultMap type="Picture" id="pictureResult">
+		<id property="id" column="id" />
+		<result property="title" column="title" />
+		<result property="coment" column="coment" />
+		<result property="regDate" column="regdate" />
+		<result property="user_id" column="userId"/>
+	</resultMap>
+
+	<!--UserAndPicture테이블 -->
+	<resultMap type="UserAndPicture" id="UserAndPictureResult">
+		<id property="id" column="UserAndPicture_id" />
+		<collection property="user" column="us" javaType="ArrayList" ofType="User">
+			<id property="id" column="userId" />
+			<result property="nickName" column="nickName" />
+			<result property="email" column="email" />
+			<result property="password" column="password" />
+		</collection>
+		<collection property="picture" column="p" javaType="ArrayList" ofType="Picture">
+			<id property="id" column="pictureId" />
+			<result property="userNickName" column="userNickName" />
+			<result property="title" column="title" />
+			<result property="coment" column="coment" />
+			<result property="regDate" column="regDate" />
+		</collection>
+	</resultMap>
+	<!-- 썸네일 보기 -->
+	<select id="galleryList" resultMap="UserAndPictureResult">
+		SELECT 
+			US.NICKNAME AS nickName, P.TITLE AS title
+		FROM USER AS US
+		INNER JOIN PICTURE AS P
+		WHERE US.nickName = P.userNickName;	
+	</select>
+
+	<!-- 회원가입 -->
+	<insert id="register" parameterType="User" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO USER(nickname, email, password)
+		VALUES(#{nickName}, #{email}, #{password});
+	</insert>
+
+	<!-- 로그인 -->
+	<select id="login" resultType="User" resultMap="userResult">
+		SELECT
+			nickName, email, password
+		FROM USER
+		WHERE email = #{email} AND password = #{password};
+	</select>
+</mapper>

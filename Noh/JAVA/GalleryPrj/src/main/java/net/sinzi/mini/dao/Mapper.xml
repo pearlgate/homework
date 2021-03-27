@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.sinzi.mini.dao.Mapper">
+	<!--USER테이블 -->
+	<resultMap type="User" id="userResult">
+		<id property="id" column="id" />
+		<result property="nickName" column="nickname" />
+		<result property="email" column="email" />
+		<result property="password" column="password" />
+	</resultMap>
+
+	<!--PICTURE테이블 -->
+	<resultMap type="Picture" id="pictureResult">
+		<id property="id" column="id" />
+		<result property="user_id" column="user_id" />
+		<result property="title" column="title" />
+		<result property="coment" column="coment" />
+		<result property="regDate" column="regdate" />
+		<result property="movieImg" column="movieImg" />
+		<result property="thumbImg" column="ThumbImg" />
+	</resultMap>
+
+	<!--UserAndPicture테이블 -->
+	<resultMap type="UserAndPicture" id="UserAndPictureResult">
+		<id property="id" column="id" />
+		<result property="name" column="userNickName" />
+		<collection property="picture" column="p.user_id" javaType="ArrayList" ofType="Picture">
+			<id property="id" column="pictureId" />
+			<result property="user_id" column="user_id" />
+			<result property="title" column="title" />
+			<result property="coment" column="coment" />
+			<result property="regDate" column="regdate" />
+			<result property="movieImg" column="movieImg" />
+			<result property="thumbImg" column="ThumbImg" />
+		</collection>
+	</resultMap>
+
+	<!-- 리뷰 보기 -->
+	<select id="galleryList" resultMap="UserAndPictureResult" parameterType="User">
+		SELECT
+			us.id as id,us.nickname as userNickName, p.user_id as user_id, p.title as title, p.coment as coment,
+			p.ThumbImg as ThumbImg, p.movieImg as movieImg
+		FROM
+		user as us
+		INNER JOIN picture AS p ON us.id = p.user_id
+		WHERE us.id = #{id};
+	</select>
+
+	<!-- 리뷰 등록 -->
+	<insert id="insert" parameterType="UserAndPicture" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO PICTURE(title, coment, thumbImg, movieImg, user_id)
+		VALUES (#{title}, #{coment}, #{thumbImg}, #{movieImg}, #{user_id});
+	</insert>
+
+	<!-- 회원가입 -->
+	<insert id="register" parameterType="User" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO USER(nickname, email, password)
+		VALUES(#{nickName}, #{email}, #{password});
+	</insert>
+
+	<!-- 로그인 -->
+	<select id="login" resultType="User" resultMap="userResult">
+		SELECT
+		id, nickname, email, password
+		FROM USER
+		WHERE email = #{email} AND password
+		= #{password};
+	</select>
+</mapper>

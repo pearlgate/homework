@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">
+ 
+ <configuration>
+ 	
+ 	<typeAliases>
+ 		<typeAlias type="net.sinzi.mini.model.User" alias="User" />
+ 		<typeAlias type="net.sinzi.mini.model.Picture" alias="Picture"/>
+ 		<typeAlias type="net.sinzi.mini.model.UserAndPicture" alias="UserAndPicture"/> 		
+ 	</typeAliases>
+ 	
+ 	<environments default="development">
+ 		<environment id="development">
+ 			<transactionManager type="JDBC" />
+ 			<dataSource type="POOLED">
+ 				<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+ 				<property name="url" value="jdbc:mysql://localhost:3306/pminiproject"/>
+ 				<property name="username" value="root"/>
+ 				<property name="password" value="0307"/>
+ 			</dataSource>
+ 		</environment>
+ 	</environments>
+ 	
+ 	<mappers>
+ 		<mapper resource="net/sinzi/mini/dao/Mapper.xml"/>
+ 	</mappers>
+ </configuration>
