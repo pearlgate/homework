@@ -6,14 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-	
+<link href="<c:url value="/css/welcome.css"/>" rel="stylesheet" />	
 </head>
 <body>
-	<div id="welcome">
-		<a href="/gallery/beforeLogin">LOGO</a>
-		<h1 id="h1">에 오신것을 환영합니다.</h1><br>
-		<a id="start" href="/gallery/beforeLogin">시작하기</a>
-	</div>
-	
+	 <div class="container">
+        <div id="welcome">
+            <h1 id="welcomeMsg"><a href="/gallery/beforeLogin">DIARY</a>에 오신것을 환영합니다.</h1>
+            <a id="goBefore" id="start" href="/gallery/beforeLogin">시작하기</a>
+        </div>
+    </div>
 </body>
 </html>

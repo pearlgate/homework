@@ -14,18 +14,37 @@ public class PictureServiceImpl implements PictureService {
 	@Autowired
 	PictureDao dao;
 	
-	//썸네일 보기
+	//리뷰 보기
 	@Override
 	public UserAndPicture showGallery(User user) {
 		
 		return dao.showGallery(user);
 	}
 	
-	//썸네일 등록
+	//리뷰 등록
 	@Override
 	public void register(Picture picture) throws Exception {
 		
 		dao.register(picture);
+	}
+	
+	//리뷰 자세히 보기
+	@Override
+	public Picture showDetail(int id) {
+		
+		return dao.showDetail(id);
+	}
+	
+	//리뷰 삭제하기
+	@Override
+	public void delete(int id) {
+		dao.delete(id);
+	}
+	
+	//리뷰 수정하기
+	@Override
+	public void update(Picture picture) {
+		dao.update(picture);		
 	}
 	
 }

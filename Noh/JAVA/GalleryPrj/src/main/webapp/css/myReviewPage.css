@@ -1,0 +1,28 @@
+body{
+	margin: 0 auto;
+	width: 1400px;
+	box-sizing: border-box;
+}
+.loginBox p{
+	margin-top: 0;
+}
+.wrapper h1{
+	text-align: center;
+	font-size: 30px;
+	font-family:Audiowide;
+}
+.img-area{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+}
+.single-img{
+	border: 1px solid;
+	margin: 0 20px 20px;
+}
+img:hover{
+	opacity: .5;
+	transition: .9s;
+}

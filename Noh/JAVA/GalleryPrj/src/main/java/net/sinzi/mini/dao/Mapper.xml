@@ -38,22 +38,6 @@
 		</collection>
 	</resultMap>
 
-	<!-- 리뷰 보기 -->
-	<select id="galleryList" resultMap="UserAndPictureResult" parameterType="User">
-		SELECT
-			us.id as id,us.nickname as userNickName, p.user_id as user_id, p.title as title, p.coment as coment,
-			p.ThumbImg as ThumbImg, p.movieImg as movieImg
-		FROM
-		user as us
-		INNER JOIN picture AS p ON us.id = p.user_id
-		WHERE us.id = #{id};
-	</select>
-
-	<!-- 리뷰 등록 -->
-	<insert id="insert" parameterType="UserAndPicture" keyProperty="id" useGeneratedKeys="true">
-		INSERT INTO PICTURE(title, coment, thumbImg, movieImg, user_id)
-		VALUES (#{title}, #{coment}, #{thumbImg}, #{movieImg}, #{user_id});
-	</insert>
 
 	<!-- 회원가입 -->
 	<insert id="register" parameterType="User" keyProperty="id" useGeneratedKeys="true">
@@ -69,4 +53,58 @@
 		WHERE email = #{email} AND password
 		= #{password};
 	</select>
+	
+	<!-- 리뷰 보기 -->
+	<select id="galleryList" resultMap="UserAndPictureResult" parameterType="User">
+		SELECT
+			us.id as id,us.nickname as userNickName,p.id as pictureId, p.user_id as user_id, p.title as title, p.coment as coment,
+			p.ThumbImg as ThumbImg, p.movieImg as movieImg, p.regDate as regdate
+		FROM
+		user as us
+		INNER JOIN picture AS p ON us.id = p.user_id
+		WHERE us.id = #{id};
+	</select>
+
+	<!-- 리뷰 등록 -->
+	<insert id="insert" parameterType="UserAndPicture" keyProperty="id" useGeneratedKeys="true">
+		INSERT INTO PICTURE(title, coment, thumbImg, movieImg, user_id)
+		VALUES (#{title}, #{coment}, #{thumbImg}, #{movieImg}, #{user_id});
+	</insert>
+	
+	<!--리뷰 자세히 보기  -->
+	<select id="detailReview" resultMap="pictureResult" parameterType="int">
+		SELECT id, title, coment, regDate,ThumbImg, movieImg FROM picture where id = #{id}; 
+	</select>
+	
+	<!--리뷰 삭제  -->
+	<delete id="delete" parameterType="int">
+		DELETE FROM picture where id = #{id};
+	</delete>
+	
+	<!--리뷰 수정  -->
+	<update id="update" parameterType="Picture">
+		UPDATE picture
+			SET title = #{title},
+				coment = #{coment},
+				thumbImg = #{thumbImg},
+				movieImg = #{movieImg}
+			WHERE id=#{id}	
+	</update>
+	<!--회원가입 id 중복체크 -->
+	<select id="idChk" resultType="int">
+		SELECT COUNT(*) FROM USER WHERE email = #{email};
+	</select>
+	
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+

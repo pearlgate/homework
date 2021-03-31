@@ -14,7 +14,6 @@ public class UserDaoImpl implements UserDao {
 	//회원가입
 	@Override
 	public void register(User user) throws Exception {
-		System.out.println(user);
 		session.insert("register", user);
 		session.commit();
 	}
@@ -25,6 +24,13 @@ public class UserDaoImpl implements UserDao {
 		
 		return session.selectOne("login", user);
 		
+	}
+	
+	//회원가입시 id중복체크
+	@Override
+	public int idChk(User user) {
+		
+		return session.selectOne("idChk", user);
 	}
 	
 	

@@ -27,6 +27,13 @@ public class UserServiceImpl implements UserService {
 		return dao.login(user);
 	}
 	
+	//회원가입시 id중복체크
+	@Override
+	public int idChk(User user) {
+		
+		return dao.idChk(user);
+	}
+	
 }
 
 

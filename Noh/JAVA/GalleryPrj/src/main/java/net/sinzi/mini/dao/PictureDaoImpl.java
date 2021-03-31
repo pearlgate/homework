@@ -15,18 +15,17 @@ public class PictureDaoImpl implements PictureDao {
 	
 	SqlSession session = MybatisUtil.getSqlSessionFactory().openSession();
 	
-	//썸네일보기
+	//리뷰 보기
 	@Override
 	public UserAndPicture showGallery(User user) {
 		
 		UserAndPicture userAndPicture = session.selectOne("galleryList", user);
-		System.out.println(user.getId());
 		session.commit();
 		
 		return userAndPicture;
 	}
 	
-	//썸네일등록
+	//리뷰 등록
 	@Override
 	public void register(Picture picture) {
 		
@@ -34,5 +33,30 @@ public class PictureDaoImpl implements PictureDao {
 		session.commit();
 		
 	}
-
+	
+	//리뷰 자세히 보기
+	@Override
+	public Picture showDetail(int id) {
+		
+		Picture picture = session.selectOne("detailReview", id);
+		session.commit();
+		return picture;
+	}
+	
+	//리뷰 삭제
+	@Override
+	public void delete(int id) {
+		session.delete("delete",id);
+		session.commit();
+		
+	}
+	
+	//리뷰 수정
+	@Override
+	public void update(Picture picture) {
+		session.update("update", picture);
+		session.commit();
+		
+	}
+	
 }

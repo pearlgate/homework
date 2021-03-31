@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>		
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,22 +10,20 @@
 <link href="<c:url value="/css/index.css"/>" rel="stylesheet" />
 </head>
 <body>
-	<div>
-		<p>${user.nickName}님이로그인 중.</p>
-		<p>${user.id}님이로그인 중.</p>
+	<%-- <div class="loginStatus">
+		<p>${user.nickName}님이 로그인 중!</p>
 		<a href="/gallery/logout" id="logoutBtn">로그아웃</a>
-	</div>
-
-	<!--리뷰 등록하기 -->
-	<div>
-		<a href="/gallery/getNewPicture" id="getNewPicture">영화등록하기</a>
-	</div>
+	</div> --%>
+		<div class="container">
+			<!--리뷰 등록하기 -->
+			<div>
+				<a href="/gallery/getNewPicture" id="getNewPicture">영화등록하기</a>
+			</div>
 	
-	<!--리뷰 등록하기 -->
-	<div>
-		<a href="/gallery/myReview" id="getMyReview">내가 등록한 리뷰 가져오기</a>
-	</div>
-
-	<script type="text/javascript" src="<c:url value="/js/bootstrap.js"/>"></script>
+			<!--리뷰 가져오기 -->
+			<div>
+				<a href="/gallery/myReview" id="getMyReview">내가 등록한 리뷰 가져오기</a>
+			</div>
+		</div>
 </body>
 </html>

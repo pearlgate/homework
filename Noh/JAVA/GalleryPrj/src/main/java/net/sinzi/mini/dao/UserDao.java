@@ -10,4 +10,7 @@ public interface UserDao {
 	//로그인
 	public User login(User user) throws Exception;
 	
+	//회원가입시 id 중복체크
+	public int idChk(User user);
+	
 }

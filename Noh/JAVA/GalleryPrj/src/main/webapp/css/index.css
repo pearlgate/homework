@@ -1,4 +1,14 @@
-#image{
-	width : 150px;
-	height : 150px;
-}
+       *{
+        font-size: 1.4rem;
+        margin: 0 auto;
+        padding: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+        .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        display:flex;
+    }
